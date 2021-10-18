@@ -4,7 +4,7 @@ import { Typography,Row,Col,Statistic } from "antd";
 import {useGetCryptosQuery} from "../services/cryptoApi";
 import Cryptocurrencies from "../components/Cryptocurrencies";
 import News from "../components/News";
-
+import Loader from "./Loader"
 
 
 
@@ -18,7 +18,7 @@ const Homepage = () => {
     const {data,isFetching}=useGetCryptosQuery(10);
 const globalStats=data?.data?.stats;
 
-    if(isFetching) return "Loding...";
+    if(isFetching) return <Loader />
 
 
     console.log(data);
